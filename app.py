@@ -16,6 +16,7 @@ app.add_middleware(
 )
 
 # 商品検索のエンドポイント
-@app.get("/api/products/lookup/{code}")  # パスが/apiで始まっているか確認
+@app.get("/api/products/lookup/{code}")
 async def lookup_product(code: str):
-    # ... 処理内容 ...
+    query = text("SELECT * FROM m_product_yama_prd WHERE code = :code")
+    # ...
