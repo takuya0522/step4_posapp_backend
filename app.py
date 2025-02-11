@@ -3,16 +3,19 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-# CORS設定を追加
+# CORSの設定
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://tech0-gen8-step4-pos-app-85.azurewebsites.net",  # フロントエンドのURL
-        "http://localhost:3000"  # ローカル開発用
+        "https://tech0-gen8-step4-pos-app-85.azurewebsites.net",
+        "http://localhost:3000"
     ],
     allow_credentials=True,
-    allow_methods=["*"],  # すべてのHTTPメソッドを許可
-    allow_headers=["*"]   # すべてのヘッダーを許可
+    allow_methods=["*"],
+    allow_headers=["*"]
 )
 
-# ... 既存のルート定義 ... 
+# 商品検索のエンドポイント
+@app.get("/api/products/lookup/{code}")  # パスが/apiで始まっているか確認
+async def lookup_product(code: str):
+    # ... 処理内容 ...
