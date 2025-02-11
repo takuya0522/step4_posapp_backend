@@ -1,6 +1,11 @@
-fastapi==0.104.1
-uvicorn==0.24.0
-sqlalchemy==2.0.23
+fastapi==0.109.0
+uvicorn==0.27.0
+python-multipart==0.0.6
+python-jose==3.3.0
+passlib==1.7.4
+bcrypt==4.1.2
+sqlalchemy==2.0.25
+psycopg2-binary==2.9.9
 pymysql==1.1.0
 python-dotenv==1.0.0
 cryptography==41.0.7  # MySQLのSSL接続に必要
