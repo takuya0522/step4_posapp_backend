@@ -17,6 +17,12 @@ jobs:
       with:
         python-version: '3.11'
 
+    # Azure認証を追加
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
     - name: Create and start virtual environment
       run: |
         python -m venv antenv
