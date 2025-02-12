@@ -16,7 +16,7 @@ engine = create_engine(
     echo=True,
     connect_args={
         "ssl": {
-            "ssl_mode": "VERIFY_IDENTITY",
+            "ssl_mode": "REQUIRED",
             "ssl": True
         }
     }
